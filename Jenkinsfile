@@ -1,6 +1,8 @@
 pipeline {
     agent any
-
+    environment {
+        FICHERO = "/etc/passwd"
+    }
     stages {
         stage('Fecha') {
             steps {
@@ -9,7 +11,7 @@ pipeline {
         }
         stage('Usuario') {
             steps {
-                sh 'wc -l /etc/passwd'
+                sh 'wc -l {FICHERO}'
             }
         }
     }
