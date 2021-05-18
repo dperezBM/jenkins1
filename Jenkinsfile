@@ -11,7 +11,7 @@ pipeline {
         }
         stage('Usuario') {
             steps {
-                sh 'wc -l {FICHERO}'
+                sh 'wc -l ${FICHERO}'
             }
         }
     }
